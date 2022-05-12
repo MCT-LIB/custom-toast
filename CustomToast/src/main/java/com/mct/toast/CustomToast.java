@@ -11,12 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
 public class CustomToast {
 
-    public static int WARNING = 1;
+    public static int INFO = 1;
     public static int ERROR = 2;
     public static int SUCCESS = 3;
-    public static int INFO = 4;
+    public static int WARNING = 4;
     public static int DEFAULT = 5;
 
     /**
@@ -24,6 +26,7 @@ public class CustomToast {
      * @param message message to show to user.
      * @return default toast without icons.
      */
+    @NonNull
     public static Toast makeDefaultToast(Context context, int duration, String message) {
         return makeText(context, duration, DEFAULT, message, false);
     }
@@ -34,6 +37,7 @@ public class CustomToast {
      * @param shouldShowIcon should icon be displayed.
      * @return success toast object.
      */
+    @NonNull
     public static Toast makeSuccessToast(Context context, int duration, String message, boolean shouldShowIcon) {
         return makeText(context, duration, SUCCESS, message, shouldShowIcon);
     }
@@ -44,6 +48,7 @@ public class CustomToast {
      * @param shouldShowIcon should icon be displayed.
      * @return error toast object.
      */
+    @NonNull
     public static Toast makeErrorToast(Context context, int duration, String message, boolean shouldShowIcon) {
         return makeText(context, duration, ERROR, message, shouldShowIcon);
     }
@@ -54,6 +59,7 @@ public class CustomToast {
      * @param shouldShowIcon should icon be displayed.
      * @return warning toast object.
      */
+    @NonNull
     public static Toast makeWarningToast(Context context, int duration, String message, boolean shouldShowIcon) {
         return makeText(context, duration, WARNING, message, shouldShowIcon);
     }
@@ -64,6 +70,7 @@ public class CustomToast {
      * @param shouldShowIcon should icon be displayed.
      * @return information toast object.
      */
+    @NonNull
     public static Toast makeInfoToast(Context context, int duration, String message, boolean shouldShowIcon) {
         return makeText(context, duration, INFO, message, shouldShowIcon);
     }
@@ -75,6 +82,7 @@ public class CustomToast {
      * @param message  message to show to user
      * @return toast with icons.
      */
+    @NonNull
     public static Toast makeText(Context context, int duration, int type, String message) {
         return makeText(context, duration, type, message, true);
     }
@@ -87,6 +95,7 @@ public class CustomToast {
      * @param isShowIcon should icon be displayed.
      * @return custom toast object with user specified customisations.
      */
+    @NonNull
     public static Toast makeText(Context context, int duration, int type, String message, boolean isShowIcon) {
         ToastView toastView = new ToastView(context, type, message, isShowIcon);
         Toast toast = new Toast(context);
